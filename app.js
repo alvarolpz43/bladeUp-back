@@ -7,6 +7,8 @@ import barberRoutes from "./BladeUp/Barber/routes/barber.routes.js";
 import requestAppointment from "./BladeUp/RequestAppointment/routes/appointmentReques.routes.js";
 import appointmentRoutes from "./BladeUp/Appointment/routes/appointment.routes.js";
 import barberServicesRoutes from "./BladeUp/BarberServices/routes/servicesBarber.routes.js";
+import clientsRoutes from "./BladeUp/Client/routes/client.routes.js";
+
 
 
 
@@ -33,6 +35,8 @@ app.use("/api/barbers", barberRoutes);
 app.use("/api/requestAppointment", requestAppointment);
 app.use("/api/appointment", appointmentRoutes);
 app.use("/api/barberServices", barberServicesRoutes);
+app.use("/api/clients", clientsRoutes);
+
 
 
 

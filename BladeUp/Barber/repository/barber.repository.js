@@ -15,4 +15,19 @@ export const BarberRepository = {
       throw new Error("Could not fetch barbers");
     }
   },
+
+  findBarberById: async (barberId) => {
+    try {
+      return await User.findOne({
+        where: { id: barberId, role: "barber" }, // Filtrar por ID y rol de barbero
+        include: {
+          model: BarberService,
+          required: true,
+        },
+      });
+    } catch (error) {
+      console.error("Error fetching barbers by ID:", error);
+      throw new Error("Could not fetch barber by ID");
+    }
+  },
 };
