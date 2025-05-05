@@ -1,6 +1,6 @@
-import {  } from "../services/serviceBarberService.js";
+import { BarberService } from "../../../models/Service.js";
 
-export const servicesBarberRepository = {
+export const BarberServRepo = {
   create: async (data) => {
     return await BarberService.create(data);
   },

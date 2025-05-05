@@ -1,27 +1,24 @@
-import { servicesBarberRepository } from "../repository/servicesBarberRepository.js";
+import { BarberServRepo } from "../repository/servicesBarberRepository.js";
 
-export const ServicesService = {
-  create: async (
-    customPrice,
-    customDescription,
-    duration,
-    barberId,
-    serviceId,
-  ) => {
-    return await servicesBarberRepository.create({
+export const barberService = {
+  create: async ({ barberId, serviceName, customPrice, customDescription, category }) => {
+    // Asegúrate de que todos los datos sean los correctos
+    const serviceData = {
+      barberId,
+      serviceName,
       customPrice,
       customDescription,
-      duration,
-      barberId,
-      serviceId,
-    });
+      category,
+    };
+
+    return await BarberServRepo.create(serviceData);
   },
 
   findById: async (id) => {
-    return await servicesBarberRepository.findByPk(id);
+    return await BarberServRepo.findById(id);  // Usando findById ahora
   },
 
   findAll: async () => {
-    return await servicesBarberRepository.findAll();
+    return await BarberServRepo.findAll();
   },
 };
