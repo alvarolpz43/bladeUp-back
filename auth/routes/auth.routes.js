@@ -15,8 +15,12 @@ router.post("/register/user", registerUser);
 
 router.post("/login", login);
 
-router.get("/users", verifyToken, verifyRole("client"), getUsers);
+router.get("/users",  getUsers);
 // router.get("/user/:username", verifyToken, verifyRole("admin"), getSingleUser);
 router.get("/profile", verifyToken, profile);
+
+
+
+// verifyToken, verifyRole("client"),
 
 export default router;

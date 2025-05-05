@@ -27,7 +27,7 @@ export const login = async (req, res) => {
 // Obtener todos los barberos (solo clientes)
 export const getUsers = async (req, res) => {
   try {
-    const users = await authService.getUsers();
+    const users = await authService.getAllUsers();
     res.status(200).json(users);
   } catch (err) {
     res.status(500).json({ message: err.message });

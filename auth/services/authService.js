@@ -23,7 +23,6 @@ export const authService = {
     return newUser;
   },
 
-
   // Login
   login: async (username, password) => {
     const user = await User.findOne({ where: { username } });
@@ -40,17 +39,20 @@ export const authService = {
     return { token, userId: user.id };
   },
 
-//  Obtener todos los barberos solo para clientes
+  //  Obtener todos los barberos solo para clientes
   getUsers: async () => {
     const users = await User.findAll({
       include: {
         model: User,
-        where: { role: 'barber' },
+        where: { role: "barber" },
       },
     });
     return users;
   },
-  
+
+  getAllUsers: async () => {
+    return await User.findAll();
+  },
 
   getSingleUser: async (username) => {
     const user = await User.findOne({ where: { username } });
