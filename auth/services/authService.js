@@ -36,7 +36,7 @@ export const authService = {
       { expiresIn: "1h" }
     );
 
-    return { token, userId: user.id };
+    return { token, userId: user.id, role: user.role };
   },
 
   //  Obtener todos los barberos solo para clientes
@@ -62,5 +62,22 @@ export const authService = {
   getProfile: async (userId) => {
     const user = await User.findByPk(userId);
     return user;
+  },
+
+  verify: async (token) => {
+    try {
+      const decoded = jwt.verify(token, TOKEN_SECRET);
+
+      // Opcional: obtener el usuario desde la BD si necesitas validarlo más a fondo
+      const user = await User.findByPk(decoded.id);
+
+      if (!user) {
+        throw new Error("Usuario no encontrado");
+      }
+
+      return user; // o `return decoded` si solo necesitas los datos del token
+    } catch (err) {
+      throw new Error("Token inválido o expirado");
+    }
   },
 };
