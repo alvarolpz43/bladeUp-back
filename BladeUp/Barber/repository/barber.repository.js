@@ -1,8 +1,7 @@
-import { User } from "../../models/User.js";
-import { BarberService } from "../../models/Service.js";
+import { User } from "../../../models/User.js";
+import { BarberService } from "../../../models/Service.js";
 
-
-export const UserRepository = {
+export const BarberRepository = {
   findAllBarbers: async () => {
     try {
       return await User.findAll({

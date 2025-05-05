@@ -1,8 +1,8 @@
-import { Appointment } from "../../models/Appoinment.js"; // Corregido el nombre del archivo
-import { AppointmentRequest } from "../../models/AppointmentRequest.js";
-import { User } from "../../models/User.js";
-import { BarberService, Service } from "../../models/Service.js";
-import { Review } from "../../models/Review.js";
+import { Appointment } from "../../../models/Appoinment.js"; // Corregido el nombre del archivo
+import { AppointmentRequest } from "../../../models/AppointmentRequest.js";
+import { User } from "../../../models/User.js";
+import { BarberService, Service } from "../../../models/Service.js";
+import { Review } from "../../../models/Review.js";
 import { Op } from "sequelize";
 
 export const appointmentRepository = {

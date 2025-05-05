@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { appointmentRequestController } from "../controllers/appointmentRequestController.js";
+import { appointmentRequestController } from "../controller/appointmentRequestController.js";
 
-import { verifyToken } from "../../shared/middlewares/verifyToken.js";
-import { verifyRole } from "../../shared/middlewares/verifyRole.js";
+import { verifyToken } from "../../../shared/middlewares/verifyToken.js";
+import { verifyRole } from "../../../shared/middlewares/verifyRole.js";
 
 const router = Router();
 

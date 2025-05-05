@@ -1,6 +1,6 @@
 import { appointmentRequestRepository } from "../repository/appointmentRequestRepository.js";
 
-export const appointmentRequestService = {
+export const RequestAppointmentService = {
   // Crear solicitud de cita
   createRequest: async ({ clientId, barberId, serviceId, requestedDate, barberServiceId }) => {
     return await appointmentRequestRepository.create({
